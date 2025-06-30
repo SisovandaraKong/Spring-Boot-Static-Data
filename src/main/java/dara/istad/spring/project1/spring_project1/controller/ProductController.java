@@ -48,7 +48,7 @@ public class ProductController {
 
     @ResponseStatus(HttpStatus.OK)
     @PutMapping("{uuid}")
-    public Map<String,Object> updateProduct(@PathVariable String uuid,@RequestBody ProductUpdateDto productUpdateDto) {
+    public Map<String,Object> updateProduct(@PathVariable String uuid,@Valid @RequestBody ProductUpdateDto productUpdateDto) {
         productService.updateProduct(uuid, productUpdateDto);
         return Map.of(
                 "Message", "Product is updated",
