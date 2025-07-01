@@ -12,5 +12,4 @@ public record ProductCreateDto(
         @NotBlank(message = "Image is required")
         String image
 ) {
-
 }

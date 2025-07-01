@@ -2,7 +2,10 @@ package dara.istad.spring.project1.spring_project1.mapper;
 
 import dara.istad.spring.project1.spring_project1.model.dto.ProductCreateDto;
 import dara.istad.spring.project1.spring_project1.model.dto.ProductResponseDto;
+import dara.istad.spring.project1.spring_project1.model.dto.UserCreateDto;
+import dara.istad.spring.project1.spring_project1.model.dto.UserResponseDto;
 import dara.istad.spring.project1.spring_project1.model.entity.Product;
+import dara.istad.spring.project1.spring_project1.model.entity.User;
 
 import java.time.Instant;
 import java.time.LocalDate;
@@ -29,6 +32,23 @@ public class Mapper {
                 product.getDescription(),
                 product.getPrice(),
                 product.getImage()
+        );
+    }
+    public static User mapFromUserCreateDtoToUser(UserCreateDto userCreateDto) {
+        return new User(
+                new Random().nextInt(9999),
+                UUID.randomUUID().toString(),
+                userCreateDto.name(),
+                userCreateDto.email(),
+                userCreateDto.password(),
+                LocalDate.now()
+        );
+    }
+    public static UserResponseDto mapFromUserToUserResponseDto(User user) {
+        return new UserResponseDto(
+                user.getUuid(),
+                user.getName(),
+                user.getEmail()
         );
     }
 }

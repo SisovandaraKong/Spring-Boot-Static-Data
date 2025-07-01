@@ -25,8 +25,7 @@ public class ProductServiceImpl implements ProductService{
     public List<ProductResponseDto> getAllProducts() {
         final List<ProductResponseDto> productResponseDtoList = new ArrayList<>();
         for (Product product : productRepository.findAll()) {
-            ProductResponseDto productResponseDto = Mapper.mapFromProductToProductResponseDto(product);
-            productResponseDtoList.add(productResponseDto);
+            productResponseDtoList.add(Mapper.mapFromProductToProductResponseDto(product));
         }
         return productResponseDtoList;
     }
