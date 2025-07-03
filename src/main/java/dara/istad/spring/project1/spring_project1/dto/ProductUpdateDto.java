@@ -1,9 +1,9 @@
-package dara.istad.spring.project1.spring_project1.model.dto;
+package dara.istad.spring.project1.spring_project1.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
-public record ProductCreateDto(
+public record ProductUpdateDto(
         @NotBlank(message = "Name is required")
         String name,
         String description,

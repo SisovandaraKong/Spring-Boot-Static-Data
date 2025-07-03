@@ -1,8 +1,8 @@
-package dara.istad.spring.project1.spring_project1.model.service;
+package dara.istad.spring.project1.spring_project1.service;
 
-import dara.istad.spring.project1.spring_project1.model.dto.ProductCreateDto;
-import dara.istad.spring.project1.spring_project1.model.dto.ProductResponseDto;
-import dara.istad.spring.project1.spring_project1.model.dto.ProductUpdateDto;
+import dara.istad.spring.project1.spring_project1.dto.ProductCreateDto;
+import dara.istad.spring.project1.spring_project1.dto.ProductResponseDto;
+import dara.istad.spring.project1.spring_project1.dto.ProductUpdateDto;
 
 import java.util.List;
 

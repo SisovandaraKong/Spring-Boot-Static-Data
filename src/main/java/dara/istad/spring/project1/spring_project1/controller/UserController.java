@@ -1,10 +1,10 @@
 package dara.istad.spring.project1.spring_project1.controller;
 
 
-import dara.istad.spring.project1.spring_project1.mapper.Mapper;
-import dara.istad.spring.project1.spring_project1.model.dto.UserCreateDto;
-import dara.istad.spring.project1.spring_project1.model.dto.UserUpdateDto;
-import dara.istad.spring.project1.spring_project1.model.service.UserService;
+import dara.istad.spring.project1.spring_project1.dto.UserCreateDto;
+import dara.istad.spring.project1.spring_project1.dto.UserUpdateDto;
+import dara.istad.spring.project1.spring_project1.service.UserService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -28,18 +28,18 @@ public class UserController {
         return Map.of("users", userService.getUserByUuid(uuid));
     }
     @PostMapping
-    public Map<String, Object> addUser(@RequestBody UserCreateDto userCreateDto) {
+    public Map<String, Object> addUser(@Valid @RequestBody UserCreateDto userCreateDto) {
         userService.addUser(userCreateDto);
         return Map.of("users", userCreateDto);
     }
     @DeleteMapping("/{uuid}")
-    public Map<String, Object> deleteUser(@PathVariable String uuid) {
+    public Map<String, Object> deleteUserByUuid(@PathVariable String uuid) {
         userService.deleteUserByUuid(uuid);
         return Map.of("users", userService.getAllUsers());
     }
     @PutMapping("/{uuid}")
     public Map<String,Object> updateUserByUuid(@PathVariable String uuid, @RequestBody UserUpdateDto userUpdateDto) {
-        userService.updateUser(uuid, userUpdateDto);
+        userService.updateUserbyUuid(uuid, userUpdateDto);
         return Map.of("users", userService.getAllUsers());
     }
     @GetMapping("/email")

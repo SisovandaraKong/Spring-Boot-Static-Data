@@ -1,4 +1,4 @@
-package dara.istad.spring.project1.spring_project1.model.entity;
+package dara.istad.spring.project1.spring_project1.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -6,7 +6,6 @@ import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 @Data
 @AllArgsConstructor

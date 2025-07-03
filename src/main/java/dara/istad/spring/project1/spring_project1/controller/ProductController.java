@@ -1,16 +1,13 @@
 package dara.istad.spring.project1.spring_project1.controller;
 
 
-import dara.istad.spring.project1.spring_project1.model.dto.ProductCreateDto;
-import dara.istad.spring.project1.spring_project1.model.dto.ProductResponseDto;
-import dara.istad.spring.project1.spring_project1.model.dto.ProductUpdateDto;
-import dara.istad.spring.project1.spring_project1.model.service.ProductService;
+import dara.istad.spring.project1.spring_project1.dto.ProductCreateDto;
+import dara.istad.spring.project1.spring_project1.dto.ProductUpdateDto;
+import dara.istad.spring.project1.spring_project1.service.ProductService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-
-
 import java.util.Map;
 
 @RequiredArgsConstructor
@@ -28,6 +25,7 @@ public class ProductController {
                 "products", productService.getAllProducts()
         );
     }
+
     @ResponseStatus(HttpStatus.OK)
     @GetMapping("{uuid}")
     public Map<String,Object> getProductById(@PathVariable String uuid) {

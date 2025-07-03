@@ -1,10 +1,10 @@
-package dara.istad.spring.project1.spring_project1.model.service;
+package dara.istad.spring.project1.spring_project1.service;
 
 import dara.istad.spring.project1.spring_project1.mapper.Mapper;
-import dara.istad.spring.project1.spring_project1.model.dto.UserCreateDto;
-import dara.istad.spring.project1.spring_project1.model.dto.UserResponseDto;
-import dara.istad.spring.project1.spring_project1.model.dto.UserUpdateDto;
-import dara.istad.spring.project1.spring_project1.model.entity.User;
+import dara.istad.spring.project1.spring_project1.dto.UserCreateDto;
+import dara.istad.spring.project1.spring_project1.dto.UserResponseDto;
+import dara.istad.spring.project1.spring_project1.dto.UserUpdateDto;
+import dara.istad.spring.project1.spring_project1.domain.User;
 import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -12,7 +12,7 @@ import java.util.List;
 
 @Service
 public class UserServiceImpl implements UserService{
-    private List<User> users = new ArrayList<>(List.of(
+    private final List<User> users = new ArrayList<>(List.of(
             new User(1, "a1b2c3d4-e5f6-7890-abcd-ef1234567890", "Alice", "alice@example.com", "password123", LocalDate.of(2024, 1, 10)),
             new User(2, "b2c3d4e5-f6a7-8901-bcde-fa2345678901", "Bob", "bob@example.com", "secure456", LocalDate.of(2024, 2, 15)),
             new User(3, "c3d4e5f6-a7b8-9012-cdef-ab3456789012", "Charlie", "charlie@example.com", "abc789", LocalDate.of(2024, 3, 20)),
@@ -52,7 +52,7 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public UserResponseDto updateUser(String uuid, UserUpdateDto userUpdateDto) {
+    public UserResponseDto updateUserbyUuid(String uuid, UserUpdateDto userUpdateDto) {
         for (User user : users) {
             if (user.getUuid().equals(uuid)) {
                 user.setName(userUpdateDto.name());

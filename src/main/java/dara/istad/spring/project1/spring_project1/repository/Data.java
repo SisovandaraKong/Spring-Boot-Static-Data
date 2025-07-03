@@ -1,5 +1,5 @@
-package dara.istad.spring.project1.spring_project1.model.repository;
-import dara.istad.spring.project1.spring_project1.model.entity.Product;
+package dara.istad.spring.project1.spring_project1.repository;
+import dara.istad.spring.project1.spring_project1.domain.Product;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;

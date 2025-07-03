@@ -1,4 +1,4 @@
-package dara.istad.spring.project1.spring_project1.model.dto;
+package dara.istad.spring.project1.spring_project1.dto;
 
 public record ProductResponseDto(
         String uuid,

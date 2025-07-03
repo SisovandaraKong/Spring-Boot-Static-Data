@@ -1,4 +1,4 @@
-package dara.istad.spring.project1.spring_project1.model.entity;
+package dara.istad.spring.project1.spring_project1.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
