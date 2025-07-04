@@ -43,7 +43,7 @@ public class UserController {
         return Map.of("users", userService.getAllUsers());
     }
     @GetMapping("/email")
-    public Map<String, Object> getUserByEmail(@RequestParam String email) {
-        return Map.of("users", userService.getUserByEmail(email));
+    public Map<String, Object> getUserByEmail(@RequestParam String email,@RequestParam String name) {
+        return Map.of("users", userService.getUserByEmail(email,name));
     }
 }

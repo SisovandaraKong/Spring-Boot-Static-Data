@@ -71,12 +71,15 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public UserResponseDto getUserByEmail(String email) {
-        for (User user : users) {
-            if (user.getEmail().equals(email)) {
-                return Mapper.mapFromUserToUserResponseDto(user);
-            }
-        }
-        return null;
+    public UserResponseDto getUserByEmail(String email, String name) {
+        return users
+                .stream()
+                .filter(user -> user.getEmail().equals(email) && user.getName().toLowerCase().contains(name.toLowerCase()))
+                .findFirst()
+                .map(user -> new UserResponseDto(
+                        user.getUuid(),
+                        user.getName(),
+                        user.getEmail()
+                )).orElse(null);
     }
 }

@@ -12,5 +12,5 @@ public interface UserService {
     UserResponseDto addUser(UserCreateDto userCreateDto);
     UserResponseDto updateUserbyUuid(String uuid, UserUpdateDto userUpdateDto);
     Integer deleteUserByUuid(String uuid);
-    UserResponseDto getUserByEmail(String email);
+    UserResponseDto getUserByEmail(String email,String name);
 }
